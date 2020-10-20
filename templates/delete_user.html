@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Delete User{% endblock %}
+
+{% block content %}
+
+<form action="/users/{{user.id}}/delete" method="POST" id="delete">
+</form>
+<h2>Are you sure you want to delete {{user.get_full_name()}}?</h2>
+
+<button type="submit" form="delete">Delete</button>
+<button onclick="location.href='/users/{{user.id}}'">Cancel</button>
+<br>
+
+<img src="{{user.image_url}}" alt="">
+<h1>{{user.get_full_name()}}</h1>
+
+{% endblock %}
